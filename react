@@ -1,0 +1,33 @@
+import React, { Component } from "react";
+import Content from "./components/Content";
+import Subject from "./components/Subject";
+import "./App.css";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      subject: { title: "Front end developer" },
+      content: [
+        { id: 1, title: "Name: ", desc: "Jeongbin Lim" },
+        { id: 2, title: "Email: ", desc: "sts06030@naver.com" },
+        { id: 3, title: "Phone number: ", desc: "010-8860-6955" },
+        { id: 4, title: "School: ", desc: "Yonsei University" },
+      ],
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Subject title={this.state.subject.title}> </Subject>
+        <Content
+          title={this.state.content.title}
+          desc={this.state.content.desc}
+        ></Content>
+      </div>
+    );
+  }
+}
+
+export default App;
